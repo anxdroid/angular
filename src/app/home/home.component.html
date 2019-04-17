@@ -1,7 +1,7 @@
 Welcome {{user}}
 <div>
   <button class="btn btn-primary" (click)="addVideo()">Aggiungi Video</button>
-  <button class="btn btn-primary" (click)="refreshTrending()">Aggiorna</button>
+  <!--<button class="btn btn-primary" (click)="refreshTrending()">Aggiorna</button>-->
 </div>
 
 <app-video-list class="d-block mt-2" [videos]="videosList$ | async"></app-video-list>
