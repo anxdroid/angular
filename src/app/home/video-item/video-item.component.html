@@ -1,0 +1,12 @@
+<div>
+  <!-- {{video | json}} -->
+  <h1>
+    {{video.title | decodeHtmlString}}</h1>
+    <img *ngIf="video.coverUrl" src="{{video.coverUrl}}">
+    <h3>
+    {{video.description | truncate :500 :true | decodeHtmlString}}
+  </h3>
+  <div>
+    <button *ngIf="isLogged" class="btn btn-primary" type="button" [routerLink]="['/video', video.id]">Watch</button>
+  </div>
+</div>

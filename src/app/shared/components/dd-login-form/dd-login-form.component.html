@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Sign In</h5>
+          <form class="form-signin" (ngSubmit)="sumbitHandler()" [formGroup]="loginForm" novalidate>
+            <div class="form-label-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Email address" autofocus [formControlName]="'email'">
+
+              <div *ngIf="emailInput.errors && emailInput.touched" class="text-danger">
+                <small *ngIf="emailInput.hasError('required')">Email not set !</small>
+                <small *ngIf="emailInput.hasError('email')">Email not correct !</small>
+                <small *ngIf="emailInput.hasError('isEmailInconsistent')">INFN or GL Email not valid !</small>
+              </div>
+            </div>
+
+            <div class="form-label-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" class="form-control" placeholder="Password" [formControlName]="'password'">
+              <div *ngIf="passwordInput.errors && passwordInput.touched" class="text-danger">
+                <small *ngIf="passwordInput.hasError('required')">Password not set !</small>
+              </div>
+            </div>
+
+            <div class="form-label-group">
+              <label for="company">Company</label>
+              <select id="company" name="company" class="form-control" [formControlName]="'company'">
+                <option *ngFor="let company of companies" [value]="company.value">{{company.label}}</option>
+              </select>
+              <div *ngIf="companyInput.errors && companyInput.touched" class="text-danger">
+                <small *ngIf="companyInput.hasError('required')">Company not set !</small>
+              </div>
+
+            </div>
+
+            <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label" for="customCheck1">Remember password</label>
+            </div>
+            <!-- [disabled]="loginForm.invalid" -->
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

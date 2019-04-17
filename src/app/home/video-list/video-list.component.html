@@ -1,0 +1,13 @@
+
+<div *ngFor="let v of videos; let i = index">
+    <!--
+        *ngIf="i % 2 === 0"
+    -->
+  <!-- appCollapseOnClick -->
+  <!-- *appUnless="i % 2 === 0" -->
+    <app-video-item
+    [video]="v" 
+    [ngClass]="{'active': v.id === activeVideo?.id}"
+    class="card" 
+    (click)="selectVideo(v)"></app-video-item>
+</div>

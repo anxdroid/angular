@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'youtube';
+  title = 'INFN CORSO ANGULAR';
+  searchValue?: string;
+  toClearValue?: boolean;
+  searchHandler(keyword: string) {
+    console.log(keyword);
+    this.searchValue = keyword;
+  }
+  clearHandler() {
+    console.log('Clear !');
+    this.toClearValue = true;
+  }
 }

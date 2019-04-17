@@ -1,0 +1,10 @@
+  {{title}} 
+  <img [src]="imagePath" (click)="changeImage()" [width]="imgWidth">
+<!--
+  <div>
+      <input type="text" [(ngModel)]="title">
+    </div>
+-->
+  <div>
+    <input #nameInput type="text" [value]="title" (keyup)="changeTitle(nameInput.value)">
+  </div>
